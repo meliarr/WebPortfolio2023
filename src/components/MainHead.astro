@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-	title = 'Jeanine White: Personal Site',
-	description = 'The personal site of Jeanine White',
+	title = 'Melissa Arroyo | Kansas City Web Designer and Front-End Developer',
+	description = 'The personal site of Melissa Arroyo',
 } = Astro.props;
 ---
 
@@ -18,13 +18,26 @@ const {
 <meta name="generator" content={Astro.generator} />
 <title>{title}</title>
 
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
-	rel="stylesheet"
-/>
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<link rel="stylesheet" href="https://use.typekit.net/frn1vgw.css">
+<script src="https://kit.fontawesome.com/e70bdb6605.js" crossorigin="anonymous"></script>
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Open Graph Data -->
+    <meta property="og:url" content="https://melarroyo.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="👩🏻‍💻 Melissa Arroyo | Front End Developer" />
+    <meta property="og:description" content="Web designer and Front End Developer in Kansas City" />
+    <meta property="og:image" content="https://www.melarroyo.com/img/og-img.png" />
+
+    <!-- Twitter Card Data -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="👩🏻‍💻 Melissa Arroyo | Front End Developer" />
+    <meta name="twitter:description" content="Web designer and Front End Developer in Kansas City" />
+    <meta name="twitter:url" content="https://melarroyo.com/" />
+    <meta name="twitter:image" content="https://www.melarroyo.com/img/og-img.png" />
 
 <script is:inline>
 	// This code is inlined in the head to make dark mode instant & blocking.

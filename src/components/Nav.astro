@@ -113,10 +113,11 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 <style>
 	nav {
 		z-index: 9999;
-		position: relative;
+		position: absolute;
 		font-family: var(--font-brand);
 		font-weight: 500;
 		margin-bottom: 3.5rem;
+		width: 100%;
 	}
 
 	.menu-header {
@@ -241,6 +242,8 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			align-items: center;
 			padding: 2.5rem 5rem;
 			gap: 1rem;
+			position: absolute;
+    		width: 100%;
 		}
 
 		.menu-header {

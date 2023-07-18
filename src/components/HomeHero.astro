@@ -1,0 +1,88 @@
+---
+interface Props {
+	title: string;
+	tagline?: string;
+	align?: 'start' | 'center';
+}
+
+const { align = 'center', tagline, title } = Astro.props;
+---
+
+<header class:list={['heroWrapper stack', align]}>
+	<div class="heroContent stack gap-3">
+		<h1 class="heroHeading">{title}</h1>
+		{tagline && <p class="heroSubHeading">{tagline}</p>}
+	</div>
+	<img class="heroPattern right" src="/public/assets/leaf-pattern.png" />
+	<img class="heroPattern left hidden lg:block" src="/public/assets/leaf-pattern.png" />
+</header>
+
+<style>
+	.heroHeading {
+		color: theme('colors.white');
+		font-family: theme('fontFamily.serif');
+		font-size: 80px;
+		font-weight: 600;
+		width: 50%;
+		margin: 0 auto;
+		@media (min-width: 992px) {
+			font-size: 130px;
+			margin-top: 5rem;
+		}
+	}
+	.heroSubHeading {
+		color: theme('colors.white');
+		background-color: theme('colors.accentPurple');
+		font-family: theme('fontFamily.condensed');
+		font-size: 20px;
+		font-weight: 100;
+		width: auto;
+		margin: 0 auto;
+		padding: 2px 5px;
+		letter-spacing: 1px;
+		@media (min-width: 992px) {
+			font-size: 30px;
+			padding: 5px 15px;
+		}
+	}
+	.heroWrapper {
+		background-image: url(/public/assets/home-hero-img.jpg);
+		background-size: cover;
+		background-position: center center;
+		height: 90vh;
+		display: flex;
+		justify-content: center;
+		position: relative;
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: theme('colors.mainPurple');
+			position: absolute;
+			top: 0;
+			z-index: 0;
+			opacity: .75;
+		}
+	}
+	.heroContent {
+		position: relative;
+		z-index: 1;
+	}
+	.heroPattern {
+		height: 100%;
+		width: auto;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		bottom: 0;
+		@media (min-width: 992px) {
+			z-index: 1;
+		}
+	}
+	.right {
+		right: -7rem;
+	}
+	.left {
+		left: -11rem;
+	}
+</style>

@@ -13,8 +13,8 @@ const { align = 'center', tagline, title } = Astro.props;
 		<h1 class="heroHeading">{title}</h1>
 		{tagline && <p class="heroSubHeading">{tagline}</p>}
 	</div>
-	<img class="heroPattern right" src="/public/assets/leaf-pattern.png" />
-	<img class="heroPattern left hidden lg:block" src="/public/assets/leaf-pattern.png" />
+	<img class="heroPattern right" src="/assets/leaf-pattern.png" />
+	<img class="heroPattern left hidden lg:block" src="/assets/leaf-pattern.png" />
 </header>
 
 <style>
@@ -46,7 +46,7 @@ const { align = 'center', tagline, title } = Astro.props;
 		}
 	}
 	.heroWrapper {
-		background-image: url(/public/assets/home-hero-img.jpg);
+		background-image: url(/assets/home-hero-img.jpg);
 		background-size: cover;
 		background-position: center center;
 		height: 90vh;

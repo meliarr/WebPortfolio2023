@@ -21,6 +21,10 @@ module.exports = {
 				serif: ['Larken', 'serif'],
 				condensed: ['"Bebas Neue Regular"', 'serif'],
 			},
+			container: {
+				center: true,
+				padding: '5rem',
+			},
 		},
 	},
 	plugins: [],

@@ -6,12 +6,14 @@ const work = await getCollection("work");
 // Importing Homepage Components
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HomeHero from "../components/HomeHero.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
+import WebPortfolioSection from "../components/PortfolioSection.astro";
+import ImgPortfolioSection from "../components/PortfolioSection.astro";
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
+
 ---
 
 <BaseLayout>
@@ -20,9 +22,16 @@ const projects = (await getCollection("work"))
 	  tagline="Front End Developer, Digital Illustrator"
 	  align="center"
 	/>
-	<PortfolioSection
+	<WebPortfolioSection
 	  title="Web Projects"
 	  introCopy="In my day job, I create pixel-perfect websites for homebuilders across the country, elevating their online presence and driving their businesses forward. During my spare time, I support local political candidates by efficiently designing and building a website that raises funds, amplifies their message and connects with voters and volunteers."
 	  techStack={['html', 'css', 'javascript', 'Git', 'Bootstrap', 'Tailwind CSS', 'ReactJS', 'Astro', 'WordPress']}
+	  aspectRatio="aspect-[4/6]"
+	/>
+	<ImgPortfolioSection
+	  title="Illustration Projects"
+	  introCopy="What began as a pandemic hobby became an opportunity to help organizations convey ideas visually and creatively."
+	  techStack={['Adobe Illustrator', 'Adobe Photoshop', 'Procreate']}
+	  aspectRatio="aspect-[1/1]"
 	/>
 </BaseLayout>

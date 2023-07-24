@@ -15,18 +15,20 @@ interface Props {
 	title: string;
   introCopy: string;
   techStack: string[];
+  aspectRatio: string;
 }
 
-const { title, introCopy, techStack } = Astro.props;
+const { title, introCopy, techStack, aspectRatio } = Astro.props;
+
 ---
 
-<section class="py-[6rem]">
+<section class={`py-[6rem] ${title === 'Illustration Projects' ? 'alignLeft' : ''}`}>
   <div class="container ">
-    <header class="PortfolioHeader_Wrapper">
+    <header class={`PortfolioHeader_Wrapper ${title === 'Illustration Projects' ? 'alignRight' : ''}`}>
       <h3 class="PortfolioHeading">{title}</h3>
       <p class="text-body font-sans text-[18px] tracking-[.25px]">{introCopy}</p>
     </header>
-    <ul class="list-none flex flex-row flex-wrap TechStack">
+    <ul class={`TechStack ${title === 'Illustration Projects' ? 'flex justify-end' : ''}`}>
       <li class="mr-1">Tech Stack:&nbsp;</li>
       {
         techStack.map(item => (
@@ -37,7 +39,7 @@ const { title, introCopy, techStack } = Astro.props;
     <ul class="lg:mt-[60px] list-none flex flex-row gap-3">
       {
         projects.map((project) => (
-          <li class="w-1/3 aspect-[4/6]">
+          <li class={`w-1/3 ${aspectRatio}`}>
             <PortfolioCards project={project} />
           </li>
         ))
@@ -54,6 +56,7 @@ const { title, introCopy, techStack } = Astro.props;
 
 <style>
   section {
+    border-bottom: 1px solid #eaeaea;
     background-color: theme('colors.white');
     position: relative;
     z-index: 0;
@@ -67,6 +70,12 @@ const { title, introCopy, techStack } = Astro.props;
       top: 0;
       right: 0;
       z-index: -1;
+    }
+  }
+  .alignLeft {
+    &::after {
+      left: 0;
+      right: unset;
     }
   }
   .PortfolioHeading {
@@ -89,7 +98,17 @@ const { title, introCopy, techStack } = Astro.props;
       background-color: theme('colors.accentPurple');
     }
   }
+  .alignRight {
+    text-align: right;
+    &:after {
+      margin: 20px 0 0 auto;
+    }
+  }
   .TechStack {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-size: 20px;
     letter-spacing: .25px;
     font-family: theme('fontFamily.condensed');

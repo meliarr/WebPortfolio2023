@@ -19,7 +19,7 @@ interface Props {
 }
 
 const { title, introCopy, techStack, aspectRatio } = Astro.props;
-
+console.log(projects.map(x => x.data.title));
 ---
 
 <section class={`py-[6rem] ${title === 'Illustration Projects' ? 'alignLeft' : ''}`}>

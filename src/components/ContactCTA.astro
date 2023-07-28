@@ -3,44 +3,91 @@ import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 ---
 
-<aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:me@example.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
-</aside>
+<section class="ContactSection">
+	<div class="container">
+		<div class="ContactSection_Card">
+			<img class="ContactSection_Photo" src="/assets/portrait-50.jpg" />
+			<h2 class="ContactSection_Heading">Do Something <span>Impactful</span></h2>
+			<p>You are on a mission to inspire change and empower your community. Does your online presence creatively reflect that? I work with organizations who wish to elevate their mission via digital design: from building compelling, user-friendly websites to designing impactful digital content. Let's discuss how to set up an online platform for your cause.</p>
+			<CallToAction href="mailto:hello@melarroyo.com">
+				Get In Touch
+				<Icon icon="paper-plane-tilt" size="1.2em" />
+			</CallToAction>
+		</div>
+	</div>
+</section>
 
 <style>
-	aside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 3rem;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+  .ContactSection {
+	padding: 100px 0;
+	background-image: url(/assets/cta-bg-img.jpg);
+	background-size: cover;
+	background-position: center center;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	z-index: 0;
+	&::after {
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-color: theme('colors.mainPurple');
+		position: absolute;
+		top: 0;
+		opacity: .65;
+		z-index: -1;
 	}
-
-	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
+	@media (min-width: 992px) {
+		padding: 130px 0 100px 0;
 	}
-
-	@media (min-width: 50em) {
-		aside {
-			padding: 7.5rem;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
+  }
+  .ContactSection_Card {
+	height: 100%;
+	width: 80%;
+	margin: 0 auto;
+	background-color: theme('colors.neutral');
+	padding: 100px 0 60px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	p {
+		width: 80%;
+		margin-bottom: 25px;
+		font-family: theme('fontFamily.sans');
+		font-size: 18px;
+	}
+	a {
+		width: fit-content;
+		margin: 0 auto;
+	}
+  }
+  .ContactSection_Photo {
+	width: 10rem;
+    border-radius: 50%;
+	margin-bottom: 20px;
+	position: absolute;
+	top: -5rem;
+  }
+  .ContactSection_Heading {
+    font-family: theme('fontFamily.serif');
+    font-size: 3em;
+    font-weight: 600;
+    margin-bottom: 30px;
+	span {
+		font-style: italic;
+		position: relative;
+		&::after {
+			content: '';
+			display: block;
+			width: 100%;
+			height: 2px;
+			background-color: theme('colors.accentPurple');
+			position: absolute;
+			right: 0;
+			top: 2.5rem;
 		}
-
-		h2 {
-			font-size: var(--text-3xl);
-			text-align: left;
-		}
 	}
+  }
 </style>

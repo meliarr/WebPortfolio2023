@@ -16,9 +16,16 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	{ label: 'GitHub', href: 'https://github.com/meliarr', icon: 'github-logo' },
 	{ label: 'CodePen', href: 'https://codepen.io/marroyo', icon: 'codepen-logo' },
 ];
+
 ---
 
-<nav>
+<script>
+	if (window.location.pathname === '/') {
+		const navElement = document.getElementById("nav");
+		navElement!.classList.add("homePageAbsolute");
+	}
+</script>
+<nav id="nav">
 	<div class="menu-header">
 		<a href="/" class="site-title">
 			<Icon icon="terminal-window" color="var(--accent-regular)" size="1.6em" gradient />
@@ -242,10 +249,12 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			align-items: center;
 			padding: 2.5rem 5rem;
 			gap: 1rem;
-			position: absolute;
+			position: relative;
     		width: 100%;
 		}
-
+		.homePageAbsolute {
+			position: absolute;
+		}
 		.menu-header {
 			padding: 0;
 		}

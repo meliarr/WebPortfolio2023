@@ -1,0 +1,23 @@
+---
+interface Props {
+  images: string[];
+}
+
+const { images } = Astro.props;
+---
+
+<section class="">
+  <div class="container">
+	{
+		images.map(img => (
+			<li>
+			  <img src={img} />
+			</li>
+		))
+	}
+  </div>
+</header>
+
+<style>
+
+</style>

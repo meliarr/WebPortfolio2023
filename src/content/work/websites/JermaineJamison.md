@@ -1,6 +1,7 @@
 ---
 title: Jermaine for Lenexa
 type: website
+draft: true
 publishDate: 2023-06-01 00:00:00
 img: /assets/portfolio-img-jermaine.png
 img_alt: Screenshot of Jermaine's campaign website homepage.

@@ -12,8 +12,8 @@ tags:
   - Procreate
 ---
 
-import ArtGallery from "@components/ArtGallery.astro"
-import artImages from "@public/assets/AvoBite"
+<!-- import ArtGallery from "@components/ArtGallery.astro"
+import artImages from "@public/assets/AvoBite" -->
 
 To display AvoBite's fresh and energetic personality, I created a series of illustrations that portrayed their most popular and recently added dishes to create excitement on social media.
 

@@ -20,7 +20,7 @@ const { title, description } = Astro.props;
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
-		<div class="stack backgrounds relative">
+		<div class="bgImg stack relative">
 			<Nav />
 			<slot />
 			<Footer />
@@ -70,10 +70,10 @@ const { title, description } = Astro.props;
 			@media (min-width: 50em) {
 				:root {
 					--bg-scale: 1;
-					--bg-image-main: url('/assets/backgrounds/bg-main-light-1440w.jpg');
+					--bg-image-main: url('/assets/backgrounds/diagonal-lines.png');
 				}
 				:root.theme-dark {
-					--bg-image-main: url('/assets/backgrounds/bg-main-dark-1440w.jpg');
+					--bg-image-main: url('/assets/backgrounds/diagonal-lines.png');
 				}
 
 				:root.loaded {
@@ -92,13 +92,27 @@ const { title, description } = Astro.props;
 				min-height: 100%;
 				isolation: isolate;
 				background:
-					/*noise*/ url('/assets/backgrounds/noise.png') top center/220px repeat,
+					/*noise*/ url('/assets/backgrounds/diagonal-lines.png') top center/220px repeat,
 					/*footer*/ var(--bg-image-footer) bottom center/var(--bg-gradient-size) no-repeat,
 					/*header1*/ var(--bg-image-main-curves) top center/var(--bg-gradient-size) no-repeat,
 					/*header2*/ var(--bg-image-main) top center/var(--bg-gradient-size) no-repeat,
 					/*base*/ var(--gray-999);
 				background-blend-mode: /*noise*/ overlay, /*footer*/ var(--bg-blend-mode),
 					/*header1*/ var(--bg-svg-blend-mode), /*header2*/ normal, /*base*/ normal;
+			}
+			.bgImg {
+				position: relative;
+				&::after {
+					content: '';
+					display: block;
+					width: 100%;
+					height: 100%;
+					background-image: url('/assets/diagonal-lines.png');
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: -1;
+				}
 			}
 			@media (forced-colors: active) {
 				/* Deactivate custom backgrounds for high contrast users. */

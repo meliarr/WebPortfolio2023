@@ -223,13 +223,13 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		padding: var(--icon-padding);
 		text-decoration: none;
-		color: var(--accent-dark);
-		transition: color var(--theme-transition);
+		color: theme('colors.accentPurple');
+		transition: 800ms;
 	}
 
 	.social:hover,
 	.social:focus {
-		color: var(--accent-text-over);
+		color: theme('colors.mainPurple');
 	}
 
 	.theme-toggle {
@@ -292,12 +292,12 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.link:hover,
 		.link:focus {
 			color: var(--gray-100);
-			background-color: var(--accent-subtle-overlay);
+			background-color: theme('colors.accentGreen');
 		}
 
 		.link.active {
 			color: var(--accent-text-over);
-			background-color: var(--accent-regular);
+			background-color: theme('colors.accentPurple');
 		}
 
 		.menu-footer {

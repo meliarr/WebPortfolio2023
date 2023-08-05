@@ -36,12 +36,15 @@ const { align = 'center', tagline, title } = Astro.props;
 		color: theme('colors.white');
 		background-color: theme('colors.accentPurple');
 		font-family: theme('fontFamily.condensed');
-		font-size: 20px;
+		font-size: 25px;
 		font-weight: 100;
 		width: auto;
-		margin: 0 auto;
-		padding: 2px 5px;
+		margin: 0 30px;
+		padding: 10px;
 		letter-spacing: 1px;
+		@media (min-width: 768px) {
+			margin: 0 auto;
+		}
 		@media (min-width: 992px) {
 			font-size: 30px;
 			padding: 5px 15px;

@@ -15,7 +15,7 @@ const { href } = Astro.props;
 		place-content: center;
 		text-align: center;
 		align-items: center;
-		padding: 0.56em 2em;
+		padding: 1em;
 		gap: 0.8em;
 		color: theme('colors.white') !important;
 		text-decoration: none;
@@ -29,17 +29,12 @@ const { href } = Astro.props;
 		letter-spacing: 1px;
 		text-transform: capitalize;
 		font-weight: 600;
+		font-size: 25px;
 		transition: 800ms;
 	}
 	a:hover {
 		background-color: theme('colors.mainPurple');
 		transition: 800ms;
-	}
-
-	@media (min-width: 20em) {
-		a {
-			font-size: 25px;
-		}
 	}
 
 	@media (min-width: 50em) {

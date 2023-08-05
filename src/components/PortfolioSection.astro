@@ -42,7 +42,7 @@ const artWork = title === 'Illustration Projects';
       }
     </ul>
     <div class="cta w-100 lg:w-1/3 mx-auto mt-[50px]">
-      <CallToAction href="/work/">
+      <CallToAction href={`/work/${artWork ? 'illustrations' : 'websites'}`}>
         View All {artWork ? 'Illustrations' : 'Websites'}
         <Icon icon="arrow-right" size="1.2em" />
       </CallToAction>

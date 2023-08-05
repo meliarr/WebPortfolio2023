@@ -1,13 +1,13 @@
 ---
 title: Kansas City Women in Technology
-type: artwork
+type: illustrations
 publishDate: 2020-03-04 00:00:00
 img: /assets/portfolio-cnc-css.png
 img_alt: Purple monochromatic illustration of fruits and cocktail garnish items.
 description: |
   A collection of stickers and digital illustrations to support KCWIT's Coding & Cocktails program.
 tags:
-  - Design
+  - Nonprofit
   - Illustration
   - Procreate
 ---

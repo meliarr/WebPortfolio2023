@@ -1,6 +1,6 @@
 ---
 title: Jermaine for Lenexa
-type: website
+type: websites
 draft: true
 publishDate: 2023-06-01 00:00:00
 img: /assets/portfolio-img-jermaine.png

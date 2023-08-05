@@ -17,9 +17,9 @@ module.exports = {
 				'link': '#8843E7',
 			},
 			fontFamily: {
-				sans: ['"Nimbus Sans Light"', 'sans-serif'],
+				sans: ['Nimbus Sans Light', 'sans-serif'],
 				serif: ['Larken', 'serif'],
-				condensed: ['"Bebas Neue Regular"', 'serif'],
+				condensed: ['Bebas Neue Regular', 'Arial', 'sans-serif'],
 			},
 			container: {
 				center: true,

@@ -1,0 +1,74 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import ContactCTA from "../../components/ContactCTA.astro";
+import PortfolioPreview from "../../components/PortfolioPreview.astro";
+import Icon from '../../components/Icon.astro';
+import Hero from "../../components/Hero.astro";
+import Grid from "../../components/Grid.astro";
+
+interface Props {
+	entry: CollectionEntry<'work'>;
+}
+
+export async function getStaticPaths() {
+  return [
+    {
+      params: { type: "websites" },
+      props: { entry: "Websites" },
+    },
+    {
+      params: { type: "illustrations" },
+      props: { entry: "Illustrations" },
+    }
+  ]
+}
+
+const { type } = Astro.params;
+const { entry } = Astro.props;
+
+const projects = (await getCollection('work'))
+  .filter(project => type && project.data.type.startsWith(type)) 
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+
+---
+
+<BaseLayout
+  title={`${entry} | Melissa Arroyo`}
+  description="Learn about Melissa Arroyo's most recent projects in web design, development, and digital illustration"
+>
+  <div class="stack gap-20">
+    <main class="wrapper stack gap-8">
+      <a class="back-link" href="/work/"><Icon icon="arrow-left" /> Back to All Projects</a>
+      <Hero
+        title={entry.toString()}
+        tagline="Leveraging all of my skills and passions through web design and digital illustration."
+        align="start"
+      />
+      <Grid variant="offset">
+        {
+          projects.map((project) => (
+            <li>
+              <PortfolioPreview project={project} />
+            </li>
+          ))
+        }
+      </Grid>
+    </main>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .back-link {
+			display: flex;
+			align-self: flex-start;
+			align-items: center;
+			gap: 10px;
+			font-family: theme('fontFamily.serif');
+			color: theme('colors.mainPurple');
+		}
+</style>

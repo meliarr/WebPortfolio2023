@@ -4,7 +4,7 @@ import Icon from './Icon.astro';
 ---
 
 <section class="ContactSection">
-	<div class="container">
+	<div class="lg:container">
 		<div class="ContactSection_Card">
 			<img class="ContactSection_Photo" src="/assets/portrait-50.jpg" />
 			<h2 class="ContactSection_Heading">Do Something <span>Impactful</span></h2>
@@ -20,40 +20,40 @@ import Icon from './Icon.astro';
 <style>
   .ContactSection {
 	padding: 100px 0;
-	background-image: url(/assets/cta-bg-img.jpg);
-	background-size: cover;
-	background-position: center center;
+	background-color: theme('colors.accentGreen');
 	display: flex;
 	justify-content: center;
 	position: relative;
 	z-index: 0;
-	&::after {
-		content: '';
-		width: 100%;
-		height: 100%;
-		background-color: theme('colors.mainPurple');
-		position: absolute;
-		top: 0;
-		opacity: .65;
-		z-index: -1;
-	}
 	@media (min-width: 992px) {
+		background-image: url('/assets/cta-bg-img.jpg');
+		background-size: cover;
+		background-position: center center;
 		padding: 130px 0 100px 0;
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: theme('colors.mainPurple');
+			position: absolute;
+			top: 0;
+			opacity: .65;
+			z-index: -1;
+		}
 	}
   }
   .ContactSection_Card {
 	height: 100%;
-	width: 80%;
 	margin: 0 auto;
 	background-color: theme('colors.neutral');
-	padding: 100px 0 60px 0;
+	padding: 100px 15px 60px 15px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	text-align: center;
 	p {
-		width: 80%;
 		margin-bottom: 25px;
 		font-family: theme('fontFamily.sans');
 		font-size: 18px;
@@ -61,6 +61,13 @@ import Icon from './Icon.astro';
 	a {
 		width: fit-content;
 		margin: 0 auto;
+	}
+	@media (min-width: 768px) {
+		width: 80%;
+		padding: 100px 0 60px 0;
+		p {
+			width: 80%;
+		}
 	}
   }
   .ContactSection_Photo {

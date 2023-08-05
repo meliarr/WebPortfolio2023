@@ -10,7 +10,7 @@ const { align = 'center', tagline, title } = Astro.props;
 
 <header class:list={['hero stack gap-4', align]}>
 	<div class={align === 'start' ? 'HeroWrapper_Left' : 'HeroWrapper_Center'}>
-		<h1 class="font-serif lg:text-[4rem] font-[800]">{title}</h1>
+		<h1 class="font-serif text-[3rem] lg:text-[4rem] font-[800]">{title}</h1>
 		{
 		  tagline &&
 		  <p class={`font-sans ${align === 'start' ? 'lg:w-[80%]' : ''}`}"font-sans">{tagline}</p>
@@ -28,10 +28,13 @@ const { align = 'center', tagline, title } = Astro.props;
 		&::after {
 			content: '';
 			display: block;
-			margin: 20px 0;
+			margin: 20px auto;
 			width: 90px;
 			height: 3px;
 			background-color: theme('colors.accentPurple');
+			@media (min-width: 992px) {
+				margin: 20px 0;
+			}
 		}
 	}
 	.HeroWrapper_Center {

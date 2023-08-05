@@ -68,6 +68,13 @@ import Hero from '../components/Hero.astro';
 		margin-top: 1.5rem;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+		@media (min-width: 768px) {
+			width: 50%;
+			margin: 0 auto;
+		}
+		@media (min-width: 992px) {
+			width: 80%;
+		}
 	}
 
 	section {
@@ -91,6 +98,7 @@ import Hero from '../components/Hero.astro';
 		grid-column: 2 / 4;
 		p {
 			font-family: theme('fontFamily.sans');
+			font-size: 18px;
 		}
 	}
 

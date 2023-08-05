@@ -51,7 +51,7 @@ const { align = 'center', tagline, title } = Astro.props;
 		background-image: url('/assets/home-hero-img.jpg');
 		background-size: cover;
 		background-position: center center;
-		height: 90vh;
+		height: 65vh;
 		display: flex;
 		justify-content: center;
 		position: relative;
@@ -64,6 +64,9 @@ const { align = 'center', tagline, title } = Astro.props;
 			top: 0;
 			z-index: 0;
 			opacity: .75;
+		}
+		@media (min-width: 992px) {
+			height: 90vh;
 		}
 	}
 	.heroContent {

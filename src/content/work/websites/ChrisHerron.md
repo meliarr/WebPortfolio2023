@@ -1,6 +1,7 @@
 ---
 title: Chris Herron for Lenexa
 type: websites
+draft: false
 publishDate: 2023-05-01 00:00:00
 img: /assets/portfolio-img-chris.jpg
 img_alt: Screenshot of homepage of Chris Herron for Lenexa's website.

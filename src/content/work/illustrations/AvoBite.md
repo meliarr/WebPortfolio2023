@@ -1,6 +1,7 @@
 ---
 title: AvoBite
 type: illustrations
+draft: false
 publishDate: 2020-03-04 00:00:00
 img: /assets/AvoBite/portfolio-avobites1.png
 img_alt: Illustration of avocado sandwich ingredients floating on top of each other.

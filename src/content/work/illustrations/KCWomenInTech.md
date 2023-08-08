@@ -1,6 +1,7 @@
 ---
 title: Kansas City Women in Technology
 type: illustrations
+draft: false
 publishDate: 2020-03-04 00:00:00
 img: /assets/portfolio-cnc-css.png
 img_alt: Purple monochromatic illustration of fruits and cocktail garnish items.

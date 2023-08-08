@@ -1,6 +1,7 @@
 ---
 title: Susan Ruiz for Kansas
 type: websites
+draft: false
 publishDate: 2022-11-08 00:00:00
 img: /assets/portfolio-img-susan.png
 img_alt: Screenshot of Susan's campaign website homepage.

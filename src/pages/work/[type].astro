@@ -30,6 +30,7 @@ const { type } = Astro.params;
 const { entry } = Astro.props;
 
 const projects = (await getCollection('work'))
+  .filter(project => !project.data.draft)
   .filter(project => type && project.data.type.startsWith(type)) 
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
 );
@@ -38,7 +39,7 @@ const projects = (await getCollection('work'))
 
 <BaseLayout
   title={`${entry} | Melissa Arroyo`}
-  description="Learn about Melissa Arroyo's most recent projects in web design, development, and digital illustration"
+  description={`Explore and learn more about Melissa Arroyo's most recent ${type}.`}
 >
   <div class="stack gap-20">
     <main class="wrapper stack gap-8">

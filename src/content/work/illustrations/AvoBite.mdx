@@ -3,7 +3,7 @@ title: AvoBite
 type: illustrations
 draft: false
 publishDate: 2020-03-04 00:00:00
-img: /assets/AvoBite/portfolio-avobites1.png
+img: /assets/portfolio-avobites1.png
 img_alt: Illustration of avocado sandwich ingredients floating on top of each other.
 description: |
   Worked on a series of commissioned pieces to reflect AvoBite's colorful dishes and variety of ingredients.
@@ -13,9 +13,8 @@ tags:
   - Procreate
 ---
 
-<!-- import ArtGallery from "@components/ArtGallery.astro"
-import artImages from "@public/assets/AvoBite" -->
+import ArtGallery from '../../../components/ArtGallery.astro';
 
 To display AvoBite's fresh and energetic personality, I created a series of illustrations that portrayed their most popular and recently added dishes to create excitement on social media.
 
-<ArtGallery images={artImages}>
+<ArtGallery images="avobite" featuredImg={frontmatter.img} />

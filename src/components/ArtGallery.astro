@@ -1,23 +1,32 @@
 ---
-interface Props {
-  images: string[];
-}
 
-const { images } = Astro.props;
+interface Props {
+  images: string;
+  featuredImg: string;
+}
+const { images, featuredImg } = Astro.props;
+
+// importing all images
+const allImages = await Astro.glob('../../public/assets/*');
+// creating array of images based on project name, excludes featured img
+const projectImgs = allImages.filter(img => img.default.includes(images) && !img.default.includes(featuredImg));
+// formatting img src, adding alt text
+const galleryImgs = projectImgs.map((x, index) => (
+  {
+    src: `${x.default.replace('/public','')}`,
+    alt: `${images} art image ${index + 1}`
+  }
+));
 ---
 
-<section class="">
-  <div class="container">
-	{
-		images.map(img => (
-			<li>
-			  <img src={img} />
-			</li>
-		))
-	}
-  </div>
-</header>
-
-<style>
-
-</style>
+<section class="ArtGallery">
+	<ul class="unstyled">
+		{
+			galleryImgs.map(img => (
+				<li>
+				  <img src={img.src} alt={img.alt} class="w-100 mb-5"/>
+				</li>
+			))
+		}
+	</ul>
+</section>

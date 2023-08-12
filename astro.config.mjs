@@ -6,4 +6,7 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://melarroyo.com',
   integrations: [tailwind(), mdx()]
+  experimental: {
+    assets: true;
+  }
 });

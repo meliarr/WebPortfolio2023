@@ -7,7 +7,7 @@ interface Props {
 const { images, featuredImg } = Astro.props;
 
 // importing all images
-const allImages = await Astro.glob('../../public/assets/*');
+const allImages = await Astro.glob('../../src/assets/*');
 // creating array of images based on project name, excludes featured img
 const projectImgs = allImages.filter(img => img.default.includes(images) && !img.default.includes(featuredImg));
 // formatting img src, adding alt text

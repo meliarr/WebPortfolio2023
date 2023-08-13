@@ -40,9 +40,13 @@ const { Content } = await entry.render();
           >
           <Hero title={entry.data.title} align="start">
             <div class="details">
-              <div class="tags">
-                {entry.data.tags.map((t) => <Pill>{t}</Pill>)}
-              </div>
+              <ul class="TechStack">
+                {
+                  entry.data.tags.map(item => (
+                    <li>{item}</li>
+                  ))
+                }
+              </ul>
               <p class="description">{entry.data.description}</p>
             </div>
           </Hero>
@@ -82,12 +86,35 @@ const { Content } = await entry.render();
     padding: 0.5rem;
     gap: 1.5rem;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
   }
 
-  .tags {
+.TechStack {
+    list-style: none;
     display: flex;
-    gap: 0.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 25px;
+    letter-spacing: .25px;
+    font-family: theme('fontFamily.condensed');
+    text-transform: uppercase;
+    font-weight: 600;
+    color: theme('colors.body');
+    margin: 20px 0;
+    @media (min-width: 992px) {
+      margin: 0;
+    }
+  }
+  .TechStack li {
+    &::after {
+      content: '|';
+      margin: 0 5px;
+    }
+  }
+  .TechStack li:last-child {
+    &::after {
+      content: '';
+    }
   }
 
   .description {

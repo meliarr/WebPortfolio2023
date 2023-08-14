@@ -17,6 +17,14 @@ const { variant } = Astro.props;
 		gap: 1rem;
 		list-style: none;
 		padding: 0;
+		@media (min-width: 768px) {
+			width: 70%;
+			margin: 0 auto;
+		}
+		@media (min-width: 992px) {
+			width: 100%;
+			margin: 0;
+		}
 	}
 
 	.grid.small {

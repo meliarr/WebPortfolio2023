@@ -4,6 +4,7 @@ const workCollection = defineCollection({
 		schema: z.object({
 			title: z.string(),
 			type: z.string(),
+			featuredImgs: z.string().optional(),
 			draft: z.boolean(),
 			description: z.string(),
 			publishDate: z.coerce.date(),

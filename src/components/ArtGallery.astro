@@ -39,13 +39,23 @@ const selectedImgs = galleryImgs.filter(img => img.src.includes(featuredImgs));
 ---
 
 <section class="ArtGallery">
-	<ul class="unstyled">
+	<ul class="unstyled columns-1 md:columns-2 lg:columns-3 lg:gap-10">
 		{
 			selectedImgs.map(img => (
 				<li>
-				  <img src={img.src} alt={img.alt} class="w-100 mb-5"/>
+				  <img
+            src={img.src}
+            alt={img.alt}
+            class="w-100 mb-5 border border-[1px] border-[#efefef]"
+          />
 				</li>
 			))
 		}
 	</ul>
 </section>
+
+<style>
+  .ArtGallery {
+    padding-top: 3rem;
+  }
+</style>

@@ -13,7 +13,7 @@ tags:
   - Elementor
 ---
 
-Inspired to run for the Lenexa City Council, Chris wanted a website that he and his campaign volunteers could easily update and manage to post events, press releases, and new content as his campaign prepares for the general election on November 7, 2023.
+<span class="text-[23px] font-light">Inspired to run for the Lenexa City Council, Chris wanted a website that he and his campaign volunteers could easily update and manage to post events, press releases, and new content as his campaign prepares for the general election on November 7, 2023.</span>
 
 Using Adobe Illustrator, I created a design that visually aligned with his branding, highlighted his passion for Lenexa and introduces his vision for the city.
 

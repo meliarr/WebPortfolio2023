@@ -14,7 +14,7 @@ tags:
   - Adobe Illustrator
 ---
 
-Seeking a second term in 2020, Rep. Susan Ruiz, sought ways to connect with voters, donors, and volunteers digitally during the height of the pandemic. 
+<span class="text-[23px] font-light">Seeking a second term in 2020, Rep. Susan Ruiz, sought ways to connect with voters, donors, and volunteers digitally during the height of the pandemic.</span>
 
 This would require a compelling website that would support the campaign's digital efforts. Meticulously considering SEO, Accessibility, and UX, I curated a design that not only showcased her progressive values but also celebrated the spirit of Kansas and its residents.
 

@@ -6,7 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import Hero from "../../components/Hero.astro";
 import Icon from "../../components/Icon.astro";
-import Pill from "../../components/Pill.astro";
+import ImageLightbox from "../../components/ImageLightbox.jsx";
 import ArtGallery from "../../components/ArtGallery.astro";
 
 interface Props {
@@ -57,17 +57,19 @@ const { Content } = await entry.render();
           </div>
         </header>
         <div class="ProjectDetailContainer">
-          <div class="flex flex-col lg:flex-row items-center gap-[3rem]">
-            {
-              entry.data.img && (
-                <img
-                  class={entry.data.type === 'websites' ? 'websiteFrame' : 'artworkFrame'}
-                  src={entry.data.img}
-                  alt={entry.data.img_alt || ""}
+          <div class="flex flex-col lg:flex-row lg:items-center gap-[3rem]">
+            <div class="lg:w-5/12">
+              {
+                entry.data.img &&
+                <ImageLightbox
+                  imgSrc={entry.data.img}
+                  imgAlt={entry.data.title}
+                  client:load
+                  aspectRatio={entry.data.type === 'illustrations' ? 'aspect-square' : 'aspect-[6/4] lg:aspect-[9/16]'}
                 />
-              )
-            }
-            <div class="content px-1 md:px-10 lg:px-0">
+              }
+            </div>
+            <div class="content lg:w-7/12 px-1 md:px-10 lg:px-0">
               <Content />
             </div>
           </div>
@@ -134,21 +136,6 @@ const { Content } = await entry.render();
     &::after {
       border: none;
     }
-  }
-  .artworkFrame {
-    width: 400px;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border: 1px solid #efefef;
-  }
-  .websiteFrame {
-    width: 408px;
-    height: auto;
-    aspect-ratio: 9/16;
-    object-fit: cover;
-    object-position: top;
-    border: 1px solid #efefef;
   }
   .description {
     font-size: var(--text-lg);

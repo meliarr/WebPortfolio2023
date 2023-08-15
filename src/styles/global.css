@@ -200,7 +200,13 @@ h5 {
 		padding-top: 0;
 	}
 }
-
+  .ArtWorkTest {
+	img {
+		aspect-ratio: 1/1;
+		object-fit: cover;
+		object-position: center;
+	}
+  }
 .stack {
 	display: flex;
 	flex-direction: column;

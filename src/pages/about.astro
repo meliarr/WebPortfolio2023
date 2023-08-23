@@ -6,121 +6,129 @@ import Hero from '../components/Hero.astro';
 ---
 
 <BaseLayout title="About | Melissa Arroyo" description="Learn about Melissa Arroyo's background, skills, and get in touch!">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="Meet Melissa"
-				tagline="Front End Developer with a Design & Marketing Background"
-			>
+	<div class="about_page mt-[6rem] lg:mt-0">
+		<div class="md:container">
+			<div class="m-6 md:m-0 md:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
 				<img
 					width="1553"
 					height="873"
+					class="m-0 lg:w-6/12 rounded-none headshot"
 					src="/assets/portrait-50.jpg"
 					alt="Melissa Arroyo at work"
 				/>
-			</Hero>
-			<section>
-				<div class="content">
-					<p>Building websites that promote positive change is my passion.</p>
-					<p>In 2018, I switched careers from Digital Marketing and earned my certificate in web technologies, where I learned the foundations of Front-End Web Development.</p>
-					<p>Eager to apply all my digital skills onto real-world projects, I joined incredible teams like <a class="text-accentPurple" href="https://kcwomenintech.org/" target="_blank">KC Women in Technology</a>, where I mentored women who were learning how to code and managed the organization&apos;s digital marketing for their Coding & Cocktails program.</p> 
-					<p>I also volunteered for <a class="text-accentPurple" href="https://susanruizks.com/" target="_blank">Susan Ruiz for Kansas</a>, where I designed and built my first website and continued to contribute by designing print and digital materials that maintained visual consistency (I still help out to this day!).</p>
-					<p>Since then, I have grown into my career as a Front End Developer with a knack for creating meaningful and strategic online experiences.</p>
-					<p>From designing social media graphics, email templates, to building websites, I help my clients create content that resonates and inspires action.</p>
-					<p>If positive change is part of your secret sauce for your next website project, let&apos;s talk!</p>
+				<div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
+					<Hero
+					  title="Meet Melissa"
+					  tagline="Front End Developer with a Design & Marketing Background"
+					  align="start"
+					/>
 				</div>
-			</section>
-		</main>
+			</div>
+		</div>
+		<section>
+			<div class="lg:w-7/12 PhotoCollage">
+				<img
+					width="500"
+					height="400"
+					class="imgA"
+					src="/assets/about/about_kcwit_square.jpg"
+					alt="Melissa Arroyo with KCWIT Marketing Director"
+				/>
+				<img
+					width="500"
+					height="400"
+					class="imgB"
+					src="/assets/about/about_kcwit2.JPG"
+					alt="Melissa Arroyo with Coding & Cocktails team"
+				/>
+			</div>
+			<div class="lg:w-5/12 mt-[2rem] lg:mt-0">
+				<p class="text-[23px] lg:text-[28px] font-light">Building websites that promote positive change became my passion.</p>
+				<p>In 2018, I switched careers from Digital Marketing and earned my certificate in web technologies, where I learned the foundations of Front-End Web Development.</p>
+				<p>Eager to apply all my digital skills onto real-world projects, I joined prominent teams like <a class="text-accentPurple" href="https://kcwomenintech.org/" target="_blank">KC Women in Technology</a>, where I mentored women who were learning how to code and managed the organization&apos;s digital marketing for their <a class="text-accentPurple" href="/work/illustrations/kcwomenintech">Coding & Cocktails program.</a></p> 
+			</div>
+		</section>
+		<section>
+			<div class="lg:w-6/12 flex justify-center">
+				<p class="lg:w-[80%]">I also volunteered for <a class="text-accentPurple" href="https://susanruizks.com/" target="_blank">Susan Ruiz for Kansas</a>, where I designed and built my first website and continued to contribute by designing print and digital materials that maintained visual consistency (I still help out to this day!).</p>
+			</div>
+			<div class="lg:w-6/12 mt-[2rem] lg:mt-0">
+				<img
+					width="500"
+					height="400"
+					class="mx-auto"
+					src="/assets/about/about_ruiz.jpg"
+					alt="Melissa Arroyo with Coding & Cocktails team"
+				/>
+			</div>
+		</section>
+		<section class="flex-col text-center">
+			<div class="lg:w-[80%]">
+				<p>Since then, I have grown into my career as a Front End Developer with a knack for creating meaningful and strategic online experiences. From making creative decisions to implementing technical solutions, I help create websites that resonate and inspire action.</p>
+				<p>If making a lasting impression is a key ingredient for your next website project, <a class="text-accentPurple" href="mailto:hello@melarroyo.com">let&apos;s talk</a>!</p>
+			</div>
+		</section>
 		<ContactCTA />
 	</div>
 </BaseLayout>
 
 <style>
-	main {
-		padding: 5rem;
-		background-color: theme('colors.white');
-		border: 3px solid #efefef;
-	}
-	.wrapper {
-		@media (min-width: 992px) {
-			padding-top: 5rem;
-		}
-	}
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
-    .HeroWrapper {
-		&::after {
-			margin: 0 auto !important;
-		}
-	}
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
+	.PhotoCollage {
 		@media (min-width: 768px) {
-			width: 50%;
-			margin: 0 auto;
-		}
-		@media (min-width: 992px) {
-			width: 80%;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: repeat(6, 1fr);
+			grid-column-gap: 10px;
+			grid-row-gap: 10px;
+			img {
+				box-shadow: 3px 3px 10px rgb(145 145 145 / 58%);
+			}
+			.imgA {
+				display: grid;
+				grid-column-start: 1;
+				grid-column-end: 3;
+				grid-row-start: 1;
+				grid-row-end: 7;
+			}
+			.imgB {
+				display: grid;
+				grid-column-start: 3;
+				grid-column-end: 5;
+				grid-row-start: 3;
+				grid-row-end: 7;
+				position: relative;
+				left: -3rem;
+			}
 		}
 	}
-
 	section {
 		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
-
-	.section-title {
-		grid-column-start: 1;
-		font-size: 30px;
-		font-family: theme('fontFamily.condensed');
-		text-transform: uppercase;
-		font-weight: 600;
-		color: theme('colors.white');
-		background-color: theme('colors.accentPurple');
-		padding: .5rem;
-		height: fit-content;
-	}
-
-	.content {
-		grid-column: 2 / 3;
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+		background-color: theme('colors.white');
+		padding: 2rem;
 		p {
 			font-family: theme('fontFamily.sans');
 			font-size: 18px;
-			margin-bottom: 15px;
+			padding-bottom: 15px;
+		}
+		&:nth-child(odd) {
+			background-color: theme('colors.neutral');
+		}
+		@media (min-width: 768px) {
+			flex-direction: column;
+		}
+		@media (min-width: 992px) {
+			flex-direction: row;
+			padding: 3rem 5rem;
+			height: auto;
 		}
 	}
-
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
-
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
-
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
-
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
-
-		section {
-			display: contents;
-			font-size: var(--text-lg);
+	@media (max-width: 991px) {
+		.headshot {
+			width: 100%;
+			height: auto;
 		}
 	}
 </style>

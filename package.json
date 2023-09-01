@@ -12,10 +12,12 @@
   "dependencies": {
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/prism": "^2.1.2",
-    "@astrojs/react": "^2.2.1",
-    "@astrojs/tailwind": "^4.0.0",
-    "astro": "^2.8.2",
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "astro": "^3.0.5",
     "lightbox.js-react": "^0.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.3"
   },
   "devDependencies": {

@@ -18,23 +18,47 @@ const projects = (await getCollection('work'))
 	title="My Work | Melissa Arroyo"
 	description="Learn about Melissa Arroyo's most recent projects in web design, development, and digital illustration"
 >
-	<div class="stack gap-20">
-		<main class="wrapper stack gap-8">
-			<Hero
-				title="My Work"
-				tagline="Leveraging all of my skills and passions through web design and digital illustration."
-				align="start"
-			/>
-			<Grid variant="offset">
-				{
-					projects.map((project) => (
-						<li>
-							<PortfolioPreview project={project} />
-						</li>
-					))
-				}
-			</Grid>
+	<div class="stack pt-[5rem] lg:pt-[1rem]">
+		<main class="stack">
+			<div class="md:container">
+				<div class="m-6 md:m-0 md:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
+					<img
+						width="1553"
+						height="873"
+						class="m-0 lg:w-6/12 rounded-none heroImg"
+						src="/assets/cta-bg-img.jpg"
+						alt="Melissa Arroyo at work"
+					/>
+					<div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
+						<Hero
+							title="My Work"
+							tagline="Leveraging all of my skills and passions through web design and digital illustration."
+							align="start"
+						/>
+					</div>
+				</div>
+			</div>
+			<div class="bg-[#fff] pb-[100px] lg:py-[100px]">
+				<div class="wrapper">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+			</div>
 		</main>
 		<ContactCTA />
 	</div>
 </BaseLayout>
+
+<style>
+	.heroImg {
+		aspect-ratio: 1/1;
+    	object-fit: cover;
+	}
+</style>

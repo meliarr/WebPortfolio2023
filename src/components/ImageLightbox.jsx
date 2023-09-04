@@ -13,7 +13,7 @@ function ImageLightbox({ imgSrc, imgAlt, aspectRatio }) {
                 theme="night"
                 image={{ src: imgSrc, title: imgAlt }}
             />
-            <span className="absolute bottom-0 left-0 bg-accentPurple px-4 py-2 text-white font-serif">Click image to enlarge</span>
+            <span className="absolute bottom-0 left-0 bg-accentPurple px-4 py-2 text-white font-serif">Click image to open gallery</span>
         </div>
   );
 }

@@ -14,6 +14,8 @@ tags:
   - Procreate
 ---
 
-<span class="text-[23px] font-light">This was a collaboration with Kansas City Women in Technology.</span>
+<span class="text-[23px] font-light">I was a Kansas City Women in Technology volunteer from 2017 to 2021, where I became marketing director for their Coding & Cocktails program.</span>
 
-Their Coding & Cocktails program is a series of events dedicated to helping women learning how to code in a lively and supportive environment. These illustrations are for a collection of stickers that participants would receive upon completing each of their different coding sessions.
+This program invites women in the area to learn front-end fundamentals in a lively and supportive environment. After a hiatius from covid, Coding & Cocktails was able to provide in-person sessions again and wanted to enhance the experience for attendees.
+
+I collaboared by creating this set of illustrations that could be used for digital marketing and stickers that participants would receive upon completing each of their different coding sessions.

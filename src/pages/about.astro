@@ -2,29 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import IntroSection from '../components/IntroSection.astro';
 ---
 
 <BaseLayout title="About | Melissa Arroyo" description="Learn about Melissa Arroyo's background, skills, and get in touch!">
 	<div class="about_page mt-[6rem] lg:mt-0">
-		<div class="md:container">
-			<div class="m-6 md:m-0 md:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
-				<img
-					width="1553"
-					height="873"
-					class="m-0 lg:w-6/12 rounded-none headshot"
-					src="/assets/portrait-50.jpg"
-					alt="Melissa Arroyo at work"
-				/>
-				<div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
-					<Hero
-					  title="Meet Melissa"
-					  tagline="Front End Developer with a Design & Marketing Background"
-					  align="start"
-					/>
-				</div>
-			</div>
-		</div>
+		<IntroSection
+			title="Meet Melissa"
+			tagline="Front End Developer with a Design & Marketing Background"
+			align="start"
+			image="/assets/portrait-50.jpg"
+			imageAlt="Melissa Arroyo at work"
+		/>
 		<section>
 			<div class="lg:w-7/12 PhotoCollage">
 				<img
@@ -122,12 +111,6 @@ import Hero from '../components/Hero.astro';
 		@media (min-width: 992px) {
 			flex-direction: row;
 			padding: 3rem 5rem;
-			height: auto;
-		}
-	}
-	@media (max-width: 991px) {
-		.headshot {
-			width: 100%;
 			height: auto;
 		}
 	}

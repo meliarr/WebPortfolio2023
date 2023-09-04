@@ -6,7 +6,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import ContactCTA from "../../components/ContactCTA.astro";
 import PortfolioPreview from "../../components/PortfolioPreview.astro";
 import Icon from "../../components/Icon.astro";
-import Hero from "../../components/Hero.astro";
+import IntroSection from "../../components/IntroSection.astro";
 import Grid from "../../components/Grid.astro";
 
 interface Props {
@@ -49,27 +49,18 @@ if (type === "illustrations") {
 >
   <div class="stack pt-[5rem] lg:pt-[1rem]">
     <main class="stack">
-      <div class="md:container">
+      <div class="wrapper">
         <a class="back-link" href="/work/"
           ><Icon icon="arrow-left" /> Back to All Projects</a
         >
-        <div class="m-4 md:m-0 md:mb-[3rem] lg:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
-          <img
-            width="1553"
-            height="873"
-            class="m-0 lg:w-6/12 rounded-none heroImg"
-            src="/assets/cta-bg-img.jpg"
-            alt="Picture of an open laptop and a capuccino on top of a white table"
-          />
-          <div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
-            <Hero
-              title={entry.toString()}
-              tagline={heroText}
-              align="start"
-            />
-          </div>
-        </div>
       </div>
+      <IntroSection
+        title={entry.toString()}
+        tagline={heroText}
+        align="start"
+        image="/assets/cta-bg-img.jpg"
+        imageAlt="Picture of an open laptop and a capuccino on top of a white table"
+      />
       <div class="bg-[#fff] pb-[100px] lg:py-[100px]">
 				<div class="wrapper">
           <Grid variant="offset">
@@ -97,6 +88,7 @@ if (type === "illustrations") {
     font-family: theme("fontFamily.serif");
     color: theme("colors.mainPurple");
     justify-content: center;
+    margin-bottom: 20px;
     @media (min-width: 992px) {
       justify-content: flex-start;
     }

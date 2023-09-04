@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
-import Hero from '../components/Hero.astro';
+import IntroSection from '../components/IntroSection.astro';
 import Grid from '../components/Grid.astro';
 
 const projects = (await getCollection('work'))
@@ -20,24 +20,13 @@ const projects = (await getCollection('work'))
 >
 	<div class="stack pt-[5rem] lg:pt-[1rem]">
 		<main class="stack">
-			<div class="md:container">
-				<div class="m-4 md:m-0 md:mb-[3rem] lg:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
-					<img
-						width="1553"
-						height="873"
-						class="m-0 lg:w-6/12 rounded-none heroImg"
-						src="/assets/cta-bg-img.jpg"
-						alt="Picture of an open laptop and a capuccino on top of a white table"
-					/>
-					<div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
-						<Hero
-							title="My Work"
-							tagline="Leveraging all of my skills and passions through web design and digital illustration."
-							align="start"
-						/>
-					</div>
-				</div>
-			</div>
+			<IntroSection
+				title="My Work"
+				tagline="Leveraging all of my skills and passions through web design and digital illustration."
+				align="start"
+				image="/assets/cta-bg-img.jpg"
+				imageAlt="Picture of an open laptop and a capuccino on top of a white table"
+			/>
 			<div class="bg-[#fff] pb-[100px] lg:py-[100px]">
 				<div class="wrapper">
 					<Grid variant="offset">

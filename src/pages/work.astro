@@ -27,7 +27,7 @@ const projects = (await getCollection('work'))
 						height="873"
 						class="m-0 lg:w-6/12 rounded-none heroImg"
 						src="/assets/cta-bg-img.jpg"
-						alt="Melissa Arroyo at work"
+						alt="Picture of an open laptop and a capuccino on top of a white table"
 					/>
 					<div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
 						<Hero
@@ -58,7 +58,10 @@ const projects = (await getCollection('work'))
 
 <style>
 	.heroImg {
-		aspect-ratio: 1/1;
-    	object-fit: cover;
-	}
+	aspect-ratio: 16/9;
+    object-fit: cover;
+    @media (min-width: 992px) {
+      aspect-ratio: 1/1;
+    }
+}
 </style>

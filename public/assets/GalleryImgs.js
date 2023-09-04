@@ -8,6 +8,10 @@ const galleryImgs = [
         alt: 'Illustration of an avocado and rice bowl with ingredients floating on top of each other'
     },
     {
+        src: '/assets/portfolio-avobites4.jpg',
+        alt: 'Photo of different dishes with stylistic, hand-drawn lines and textures with the words Now Open in the bottom right of the image.'
+    },
+    {
         src: '/assets/portfolio-cnc-enjoy.png',
         alt: 'Illustration of two garnished cocktails with the word enjoy on one glass, and the words html, css, js, and git on the ice cubes in the other glass'
     },

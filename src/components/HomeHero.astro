@@ -13,8 +13,16 @@ const { align = 'center', tagline, title } = Astro.props;
 		<h1 class="heroHeading">{title}</h1>
 		{tagline && <p class="heroSubHeading">{tagline}</p>}
 	</div>
-	<img class="heroPattern right" src="/assets/leaf-pattern.png" />
-	<img class="heroPattern left hidden lg:block" src="/assets/leaf-pattern.png" />
+	<img
+	  class="heroPattern right"
+	  src="/assets/leaf-pattern.png"
+	  alt="Decorative illustration of leaves and front-end syntax"
+	/>
+	<img
+	  class="heroPattern left hidden lg:block"
+	  src="/assets/leaf-pattern.png"
+	  alt="Duplicate illustration of leaves and front-end syntax"
+	/>
 </header>
 
 <style>

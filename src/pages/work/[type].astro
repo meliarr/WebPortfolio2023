@@ -32,6 +32,15 @@ const { entry } = Astro.props;
 const projects = (await getCollection("work"))
   .filter((project) => type && project.data.type.startsWith(type))
   .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+let heroText;
+if (type === "illustrations") {
+  heroText = "When I'm not immersed in web development and design, I collaborate with organizations to create digital illustrations that strategically and creatively support their marketing goals.";
+} else if (type === "websites") {
+  heroText = "From designing simple and elegant websites in WordPress to building complex and engaging components in React, I dedicate my expertise and focus to bringing designs that inform and convert.";
+} else {
+  heroText = "Leveraging all of my skills and passions through web design and digital illustration.";
+}
 ---
 
 <BaseLayout
@@ -43,11 +52,22 @@ const projects = (await getCollection("work"))
       <a class="back-link" href="/work/"
         ><Icon icon="arrow-left" /> Back to All Projects</a
       >
-      <Hero
-        title={entry.toString()}
-        tagline="Leveraging all of my skills and passions through web design and digital illustration."
-        align="start"
-      />
+      <div class="m-6 md:m-0 md:mb-[6rem] flex flex-col lg:flex-row items-center rounded-[3rem] overflow-hidden  bg-[#fff] border border-[3px] border-[#efefef]">
+        <img
+          width="1553"
+          height="873"
+          class="m-0 lg:w-6/12 rounded-none heroImg"
+          src="/assets/cta-bg-img.jpg"
+          alt="Picture of an open laptop and a capuccino on top of a white table"
+        />
+        <div class="lg:w-6/12 lg:pl-[4rem] py-5 px-3">
+          <Hero
+            title={entry.toString()}
+            tagline={heroText}
+            align="start"
+          />
+        </div>
+			</div>
       <Grid variant="offset">
         {
           projects.map((project) => (
@@ -71,4 +91,13 @@ const projects = (await getCollection("work"))
     font-family: theme("fontFamily.serif");
     color: theme("colors.mainPurple");
   }
+
+	.heroImg {
+		aspect-ratio: 16/9;
+    object-fit: cover;
+    @media (min-width: 992px) {
+      aspect-ratio: 1/1;
+    }
+	}
+
 </style>

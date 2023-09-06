@@ -1,5 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
+
+//Image Imports
+import aboutPhoto1 from '../assets/about/about_kcwit_square.jpg';
+import aboutPhoto2 from '../assets/about/about_kcwit2.jpg';
+import aboutPhoto3 from '../assets/about/about_ruiz.jpg';
+import headerPhoto from '../assets/portrait-50.jpg';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import IntroSection from '../components/IntroSection.astro';
@@ -11,23 +18,23 @@ import IntroSection from '../components/IntroSection.astro';
 			title="Meet Melissa"
 			tagline="Front End Developer with a Design & Marketing Background"
 			align="start"
-			image="/assets/portrait-50.jpg"
+			image={headerPhoto}
 			imageAlt="Melissa Arroyo at work"
 		/>
 		<section>
 			<div class="lg:w-7/12 PhotoCollage">
-				<img
+				<Image
 					width="500"
 					height="400"
 					class="imgA"
-					src="/assets/about/about_kcwit_square.jpg"
+					src={aboutPhoto1}
 					alt="Melissa Arroyo with KCWIT Marketing Director"
 				/>
-				<img
+				<Image
 					width="500"
 					height="400"
 					class="imgB"
-					src="/assets/about/about_kcwit2.JPG"
+					src={aboutPhoto2}
 					alt="Melissa Arroyo with Coding & Cocktails team"
 				/>
 			</div>
@@ -42,11 +49,11 @@ import IntroSection from '../components/IntroSection.astro';
 				<p class="lg:w-[80%]">I also volunteered for <a class="text-accentPurple" href="https://susanruizks.com/" target="_blank">Susan Ruiz for Kansas</a>, where I designed and built my first website and continued to contribute by designing print and digital materials that maintained visual consistency (I still help out to this day!).</p>
 			</div>
 			<div class="lg:w-6/12 mt-[2rem] lg:mt-0">
-				<img
+				<Image
 					width="500"
 					height="400"
 					class="mx-auto"
-					src="/assets/about/about_ruiz.jpg"
+					src={aboutPhoto3}
 					alt="Melissa Arroyo with Coding & Cocktails team"
 				/>
 			</div>

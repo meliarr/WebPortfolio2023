@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 import BaseLayout from '../layouts/BaseLayout.astro';
-
+import IntroPhoto from '../assets/cta-bg-img.jpg'
 import ContactCTA from '../components/ContactCTA.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import IntroSection from '../components/IntroSection.astro';
@@ -24,7 +24,7 @@ const projects = (await getCollection('work'))
 				title="My Work"
 				tagline="Leveraging all of my skills and passions through web design, web development, and digital illustration."
 				align="start"
-				image="/assets/cta-bg-img.jpg"
+				image={IntroPhoto}
 				imageAlt="Picture of an open laptop and a capuccino on top of a white table"
 			/>
 			<div class="bg-[#fff] pb-[100px] lg:py-[100px]">

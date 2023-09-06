@@ -1,26 +1,28 @@
 ---
 import Hero from './Hero.astro';
+import { Image } from 'astro:assets';
 
 interface Props {
 	title: string;
 	tagline?: string;
 	align?: 'start' | 'center';
-	image: string;
+	image: ImageMetadata;
 	imageAlt: string;
 }
 
 const { align = 'center', tagline, title, image, imageAlt } = Astro.props;
+console.log(image);
 ---
 
 <div class="md:container">
 	<div class="lg:min-h-[60vh] m-6 md:m-0 md:mb-[4rem] flex flex-col lg:flex-row items-stretch rounded-[3rem] overflow-hidden bg-[#fff] border border-[3px] border-[#efefef]">
 		<div class="m-0 lg:w-6/12 flex-1 flex items-stretch">
-			<img
-			width="1553"
-			height="873"
-			class="object-cover"
-			src={image}
-			alt={imageAlt}
+			<Image
+				width="1553"
+				height="873"
+				class="object-cover"
+				src={image}
+				alt={imageAlt}
 			/>
 		</div>
 		<div class="px-[1rem] md:px-[3rem] lg:px-0 lg:w-6/12 py-[4rem] lg:pl-[3rem] flex items-center flex-1">

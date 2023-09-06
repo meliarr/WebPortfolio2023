@@ -1,15 +1,21 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+import { Image } from 'astro:assets';
+
+// photo imports
+import ctaHeadshot from '../assets/headshot.jpg'
 ---
 
 <section class="ContactSection">
 	<div class="lg:container">
 		<div class="ContactSection_Card">
-			<img
+			<Image
 			  class="ContactSection_Photo aspect-square"
-			  src="/assets/headshot.jpg"
+			  src={ctaHeadshot}
 			  alt="Melissa Arroyo headshot"
+			  width="500"
+			  height="500"
 			/>
 			<h2 class="ContactSection_Heading">Do Something <span>Impactful</span></h2>
 			<p>You are on a mission to inspire change and empower your community. Does your online presence creatively reflect that? I work with organizations who wish to elevate their mission via digital design: from building compelling, user-friendly websites to designing impactful digital content. Let's discuss how to set up an online platform for your cause.</p>

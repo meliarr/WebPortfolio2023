@@ -195,7 +195,7 @@ h5 {
 	max-width: 83rem;
 	margin-inline: auto;
 	padding-inline: 1.5rem;
-	padding-top: 7rem;
+	padding-top: 4rem;
 	@media (min-width: 992px) {
 		padding-top: 0;
 	}

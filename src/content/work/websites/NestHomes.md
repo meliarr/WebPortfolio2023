@@ -21,6 +21,6 @@ After receiving the Figma file from one of our web designers, I got to work by f
 
 To make the design responsive, I built the components using Bootstrap, and built the photography collage designs using CSS Grid so I can rearrange the order of the elements based on screen size.
 
-When the client has specific needs about the data they want to present in the front-end, I use JavaSript to define the logic based on the client's specifications. For example, displaying available homes, building custom filters, selecting featured images, to name a few.
+When the client has specific needs about the data they want to present in the front-end, I use JavaScript to define the logic based on the client's specifications. For example, displaying available homes, building custom filters, selecting featured images, to name a few.
 
 

@@ -223,13 +223,15 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		padding: var(--icon-padding);
 		text-decoration: none;
-		color: theme('colors.accentPurple');
+		color: theme('colors.white');
 		transition: 800ms;
+		background-color: theme('colors.accentPurple');
+		border-radius: 50%;
 	}
 
 	.social:hover,
 	.social:focus {
-		color: theme('colors.mainPurple');
+		color: theme('colors.accentGreen');
 	}
 
 	.theme-toggle {
@@ -319,7 +321,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.socials {
 			display: flex;
 			justify-content: flex-end;
-			gap: 0;
+			gap: 5px;
 		}
 	}
 	@media (forced-colors: active) {

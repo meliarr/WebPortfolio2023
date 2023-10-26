@@ -1,0 +1,111 @@
+---
+interface Props {
+	title: string;
+	tagline?: string;
+	align?: 'start' | 'center';
+}
+
+const { align = 'center', tagline, title } = Astro.props;
+---
+
+<header class:list={['heroWrapper stack', align]}>
+	<div class="heroContent stack gap-3">
+		<h1 class="heroHeading">{title}</h1>
+		{tagline && <p class="heroSubHeading">{tagline}</p>}
+	</div>
+	<img
+	  class="heroPattern left hidden lg:block"
+	  src="/assets/leaf-pattern.png"
+	  alt="Duplicate illustration of leaves and front-end syntax"
+	/>
+</header>
+
+<style>
+	.heroHeading {
+		color: theme('colors.white');
+		font-family: theme('fontFamily.serif');
+		font-size: 80px;
+		font-weight: 600;
+		margin: 0 auto;
+		@media (min-width: 768px) {
+		  width: 50%;
+		}
+		@media (min-width: 992px) {
+			font-size: 130px;
+			margin-top: 5rem;
+			text-align: left;
+		}
+	}
+	.heroSubHeading {
+		color: theme('colors.white');
+		background-color: theme('colors.accentPurple');
+		font-family: theme('fontFamily.condensed');
+		text-transform: uppercase;
+		font-size: 25px;
+		font-weight: 600;
+		width: auto;
+		margin: 0;
+		padding: 10px;
+		letter-spacing: .5px;
+		@media (min-width: 768px) {
+			margin: 0 auto;
+		}
+		@media (min-width: 992px) {
+			margin: 0 auto 0 25%;
+			font-size: 30px;
+			padding: 5px 15px;
+		}
+	}
+	.heroWrapper {
+		background-image: url('../assets/hero-img-mobile.jpg');
+		background-size: 112%;
+        background-position: top;
+		background-repeat: no-repeat;
+		background-color: theme('colors.mainPurple');
+		height: 65vh;
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		&::after {
+			content: '';
+			width: 100%;
+			height: 100%;
+			background-color: theme('colors.mainPurple');
+			position: absolute;
+			top: 0;
+			z-index: 0;
+			opacity: .75;
+		}
+		@media (min-width: 768px) {
+			background-image: url('../assets/hero-img.jpg');
+			background-size: 90%;
+		    background-position: right center;
+			height: 90vh;
+			justify-content: center;
+		}
+		@media (min-width: 992px) {
+			background-size: 58%;
+		}
+	}
+	.heroContent {
+		position: relative;
+		z-index: 1;
+	}
+	.heroPattern {
+		height: 100%;
+		width: auto;
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		bottom: 0;
+		@media (min-width: 992px) {
+			z-index: 1;
+		}
+	}
+	.right {
+		right: -7rem;
+	}
+	.left {
+		left: -11rem;
+	}
+</style>

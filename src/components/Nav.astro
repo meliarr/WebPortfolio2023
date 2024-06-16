@@ -1,26 +1,41 @@
 ---
-import Icon from './Icon.astro';
+import Icon from "./Icon.astro";
 //import ThemeToggle from './ThemeToggle.astro';
-import type { iconPaths } from './IconPaths';
+import type { iconPaths } from "./IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Home', href: '/' },
-	{ label: 'Work', href: '/work/' },
-	{ label: 'About', href: '/about/' },
+	{ label: "Home", href: "/" },
+	{ label: "Work", href: "/work/" },
+	{ label: "About", href: "/about/" },
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
-const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[] = [
-	{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/arroyo-melissa/', icon: 'linkedin-logo' },
-	{ label: 'GitHub', href: 'https://github.com/meliarr', icon: 'github-logo' },
-	{ label: 'CodePen', href: 'https://codepen.io/marroyo', icon: 'codepen-logo' },
+const iconLinks: {
+	label: string;
+	href: string;
+	icon: keyof typeof iconPaths;
+}[] = [
+	{
+		label: "LinkedIn",
+		href: "https://www.linkedin.com/in/banks-melissa/",
+		icon: "linkedin-logo",
+	},
+	{
+		label: "GitHub",
+		href: "https://github.com/meliarr",
+		icon: "github-logo",
+	},
+	{
+		label: "CodePen",
+		href: "https://codepen.io/marroyo",
+		icon: "codepen-logo",
+	},
 ];
-
 ---
 
 <script>
-	if (window.location.pathname === '/') {
+	if (window.location.pathname === "/") {
 		const navElement = document.getElementById("nav");
 		navElement!.classList.add("homePageAbsolute");
 	}
@@ -44,11 +59,14 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 						<a
 							aria-current={Astro.url.pathname === href}
 							class:list={[
-								'link',
+								"link",
 								{
 									active:
 										Astro.url.pathname === href ||
-										(href !== '/' && Astro.url.pathname.startsWith(href)),
+										(href !== "/" &&
+											Astro.url.pathname.startsWith(
+												href
+											)),
 								},
 							]}
 							href={href}
@@ -84,33 +102,37 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			super();
 
 			// Inject menu toggle button when JS runs.
-			this.appendChild(this.querySelector('template')!.content.cloneNode(true));
-			const btn = this.querySelector('button')!;
+			this.appendChild(
+				this.querySelector("template")!.content.cloneNode(true)
+			);
+			const btn = this.querySelector("button")!;
 
 			// Hide menu (shown by default to support no-JS browsers).
-			const menu = document.getElementById('menu-content')!;
+			const menu = document.getElementById("menu-content")!;
 			menu.hidden = true;
 
 			/** Set whether the menu is currently expanded or collapsed. */
 			const setExpanded = (expand: boolean) => {
-				btn.setAttribute('aria-expanded', expand ? 'true' : 'false');
+				btn.setAttribute("aria-expanded", expand ? "true" : "false");
 				menu.hidden = !expand;
 			};
 
 			// Toggle menu visibility when the menu button is clicked.
-			btn.addEventListener('click', () => setExpanded(menu.hidden));
+			btn.addEventListener("click", () => setExpanded(menu.hidden));
 
 			// Hide menu button for large screens.
-			const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
+			const handleViewports = (
+				e: MediaQueryList | MediaQueryListEvent
+			) => {
 				setExpanded(e.matches);
 				btn.hidden = e.matches;
 			};
-			const mediaQueries = window.matchMedia('(min-width: 50em)');
+			const mediaQueries = window.matchMedia("(min-width: 50em)");
 			handleViewports(mediaQueries);
-			mediaQueries.addEventListener('change', handleViewports);
+			mediaQueries.addEventListener("change", handleViewports);
 		}
 	}
-	customElements.define('menu-button', MenuButton);
+	customElements.define("menu-button", MenuButton);
 </script>
 
 <style>
@@ -151,7 +173,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		box-shadow: var(--shadow-md);
 	}
 
-	.menu-button[aria-expanded='true'] {
+	.menu-button[aria-expanded="true"] {
 		color: var(--gray-0);
 		background: linear-gradient(180deg, var(--gray-600), transparent),
 			radial-gradient(var(--gray-900), var(--gray-800) 150%);
@@ -164,7 +186,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 	.menu-button::before {
 		position: absolute;
 		inset: -1px;
-		content: '';
+		content: "";
 		background: var(--gradient-stroke);
 		border-radius: 999rem;
 		z-index: -1;
@@ -223,15 +245,15 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		display: flex;
 		padding: var(--icon-padding);
 		text-decoration: none;
-		color: theme('colors.white');
+		color: theme("colors.white");
 		transition: 800ms;
-		background-color: theme('colors.accentPurple');
+		background-color: theme("colors.accentPurple");
 		border-radius: 50%;
 	}
 
 	.social:hover,
 	.social:focus {
-		color: theme('colors.accentGreen');
+		color: theme("colors.accentGreen");
 	}
 
 	.theme-toggle {
@@ -248,7 +270,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 			padding: 2.5rem 5rem;
 			gap: 1rem;
 			position: relative;
-    		width: 100%;
+			width: 100%;
 		}
 		.homePageAbsolute {
 			position: absolute;
@@ -279,7 +301,7 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.nav-items::before {
 			position: absolute;
 			inset: -1px;
-			content: '';
+			content: "";
 			background: var(--gradient-stroke);
 			border-radius: 999rem;
 			z-index: -1;
@@ -288,18 +310,19 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 		.link {
 			padding: 0.5rem 1rem;
 			border-radius: 999rem;
-			transition: color var(--theme-transition), background-color var(--theme-transition);
+			transition: color var(--theme-transition),
+				background-color var(--theme-transition);
 		}
 
 		.link:hover,
 		.link:focus {
 			color: var(--gray-100);
-			background-color: theme('colors.accentGreen');
+			background-color: theme("colors.accentGreen");
 		}
 
 		.link.active {
 			color: var(--accent-text-over);
-			background-color: theme('colors.accentPurple');
+			background-color: theme("colors.accentPurple");
 		}
 
 		.menu-footer {

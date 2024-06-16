@@ -6,16 +6,23 @@ const currentYear = new Date().getFullYear();
 	<div class="w-100 flex flex-col lg:flex-row">
 		<div class="lg:w-6/12 text-left">
 			<p>
-				Designed and Built by Me Using <a href="https://astro.build/">Astro</a> and <a href="https://tailwindcss.com/">Tailwind CSS</a> &copy; {currentYear} Melissa Banks
+				Designed and Built by Me Using <a href="https://astro.build/"
+					>Astro</a
+				> and <a href="https://tailwindcss.com/">Tailwind CSS</a> &copy;
+				{currentYear} Melissa Banks
 			</p>
 		</div>
 		<p class="socials lg:w-6/12">
-			<a href="https://www.linkedin.com/in/arroyo-melissa/"> LinkedIn</a>
+			<a href="https://www.linkedin.com/in/banks-melissa/"> LinkedIn</a>
 			<a href="https://github.com/meliarr"> GitHub</a>
 			<a href="https://codepen.io/marroyo"> CodePen</a>
 		</p>
 	</div>
-	<p class="font-light italic text-left tracking-[.45px]">The views and opinions expressed on this website are solely those of the author and do not necessarily reflect the views of the author's employer, the author's employer's clients, or the author's own clients.</p>
+	<p class="font-light italic text-left tracking-[.45px]">
+		The views and opinions expressed on this website are solely those of the
+		author and do not necessarily reflect the views of the author's
+		employer, the author's employer's clients, or the author's own clients.
+	</p>
 </footer>
 <style>
 	footer {
@@ -25,13 +32,13 @@ const currentYear = new Date().getFullYear();
 		margin-top: auto;
 		padding: 3rem 2rem 3rem;
 		text-align: center;
-		color: theme('colors.white');
+		color: theme("colors.white");
 		font-size: var(--text-sm);
-		background-color: theme('colors.mainPurple');
+		background-color: theme("colors.mainPurple");
 	}
 
 	footer a {
-		color: theme('colors.accentGreen');
+		color: theme("colors.accentGreen");
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
 		transition: text-decoration-color var(--theme-transition);
